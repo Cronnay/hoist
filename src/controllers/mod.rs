@@ -1,1 +1,1 @@
-pub mod first_page;
+pub mod images;
