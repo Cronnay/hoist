@@ -10,3 +10,4 @@ edition = "2018"
 [dependencies]
 bollard = "0.8"
 actix-web = "3"
+serde = "1.0.117"

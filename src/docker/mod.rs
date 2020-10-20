@@ -1,4 +1,5 @@
 use bollard::Docker;
+pub mod container;
 pub mod image;
 
 pub fn get_docker_instance() -> Docker {

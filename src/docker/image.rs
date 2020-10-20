@@ -4,16 +4,12 @@ use bollard::Docker;
 
 /// Display all images
 pub async fn get_all_images(docker: &Docker) -> Result<Vec<ImageSummary>, bollard::errors::Error> {
-    let mut images: Vec<ImageSummary> = vec![];
     let options = ListImagesOptions::<&str> {
         all: true,
         ..Default::default()
     };
     let docker_images = &docker.list_images(Some(options)).await?;
-    for image in docker_images {
-        images.push(image.clone());
-    }
-    Ok(images)
+    Ok(docker_images.clone())
 }
 
 /// Get Docker image by name

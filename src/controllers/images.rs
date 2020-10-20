@@ -2,7 +2,7 @@ use crate::docker::get_docker_instance;
 use crate::docker::image::{get_all_images, get_image_by_name};
 use actix_web::{get, web, HttpResponse};
 
-#[get("/images")]
+#[get("/image")]
 pub async fn get_images() -> HttpResponse {
     let docker = get_docker_instance();
     let images = get_all_images(&docker).await.unwrap();
