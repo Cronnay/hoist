@@ -1,3 +1,3 @@
 # Hoist
 
-Project built in Rust. Web API to create new docker containers
+Selfhosted AWS Lambda-like service built in Rust
