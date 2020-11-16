@@ -9,12 +9,12 @@ pub async fn get_images() -> HttpResponse {
     HttpResponse::Ok().json(images)
 }
 
-#[get("/image/{name}")]
-pub async fn get_image_from_name(web::Path(name): web::Path<String>) -> HttpResponse {
-    let docker = get_docker_instance();
-    let image = get_image_by_name(&name, &docker).await;
-    match image {
-        Ok(img) => HttpResponse::Ok().json(img),
-        Err(_) => HttpResponse::BadRequest().body(format!("Cannot find image with name {}", name)),
-    }
-}
+// #[get("/image/{name}")]
+// pub async fn get_image_from_name(web::Path(name): web::Path<String>) -> HttpResponse {
+//     let docker = get_docker_instance();
+//     let image = get_image_by_name(&name, &docker).await;
+//     match image {
+//         Ok(img) => HttpResponse::Ok().json(img),
+//         Err(_) => HttpResponse::BadRequest().body(format!("Cannot find image with name {}", name)),
+//     }
+// }
